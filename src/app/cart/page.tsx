@@ -8,6 +8,7 @@ import { useToast } from '@/hooks/use-toast';
 import { BookOpen, Minus, Plus, ShoppingCart, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState } from 'react'
+import Navbar from "@/components/Navbar";
 
 const CartPage = () => {
     const { toast } = useToast()
@@ -56,25 +57,7 @@ const CartPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <nav className="border-b bg-white">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <BookOpen className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-bold text-gray-900">EBookStore</span>
-          </Link>
-          <div className="flex items-center space-x-4">
-            <Link href="/books">
-              <Button variant="ghost">Browse Books</Button>
-            </Link>
-            <Link href="/profile">
-              <Button variant="ghost">Profile</Button>
-            </Link>
-            <Link href="/login">
-              <Button variant="outline">Login</Button>
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8">Shopping Cart</h1>
